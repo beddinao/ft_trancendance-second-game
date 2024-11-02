@@ -1,0 +1,155 @@
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	transition-duration: 0.1s;
+}
+
+body,
+#App {
+	height: 100vh;
+	width: 100vw;
+	background: #000;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: monospace;
+}
+
+body, #App, div, button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background: #000;
+}
+
+#App {
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+#App > div:not(#game) {
+	height: 50%;
+	width: 50%;
+	padding: 2%;
+}
+
+p {
+	font-size: 0.85em;
+}
+
+h1 {
+	font-size: 1.3em;
+}
+
+#control {
+	align-items: start;
+	row-gap: 2em;
+	justify-content: start;
+}
+
+#stats {
+	align-items: end;
+	justify-content: start;
+}
+#stats > p {
+	font-size: 2em;
+}
+#stats > p > span {
+	padding: 0 10px;
+}
+
+#stats > p:nth-child(1) > span {
+	border-bottom: none;
+}
+#stats > p:nth-child(2) > span {
+	border-top: none;
+}
+
+#console {
+	align-items: start;
+	justify-content: end;
+}
+#logs {
+	align-items: end;
+	justify-content: end;
+	overflow: auto;
+}
+
+button {
+	width: 10em;
+	height: 2em;
+	background: #000;
+	color: #fff;
+	border: 1px solid #fff;
+	font-size: 0.8em;
+	text-transform: uppercase;
+	font-family: monospace;
+	cursor: pointer;
+}
+
+button:hover{
+	background: #fff;
+	color: #000;
+}
+
+#App > div:nth-child(1) {
+	position: absolute;
+	height: 50vw;
+	width: 50vw;
+	max-height: 90vh;
+	max-width: 90vw;
+	min-height: 40vh;
+	min-width: 40vh;
+}
+
+#game {
+	background: #000;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: space-between;
+	justify-content: space-between;
+}
+
+#game > div {
+	border: 1px solid #A9A9A9;
+	height: 19%;
+	width: 19%;
+	cursor: pointer;
+}
+
+.x > h1, .o > h1, #temp_h1 {
+	font-size: 4em;
+	font-family: serif;
+	font-weight: lighter;
+	max-height: 80%;
+	max-width: 80%;
+}
+
+#temp_h1 {
+	color: #A9A9A9;
+}
+
+#looking_up > div, #found > div {
+	align-items:start;
+}
+
+#found > div {
+	row-gap: 2em;
+}
+
+@media only screen and (max-width: 700px) {
+	h1 { transform: scale(0.8); }
+	.x > h1, .o > h1 { transform: scale(0.6)}
+}
+
+@media only screen and (max-width: 900px) {
+	#console_obj,  #logs { display: none; }
+	h1 { transform: scale(0.9); }
+	.x > h1, .o > h1, #temp_h1 { transform: scale(0.7) }
+}
+
+@media only screen and (max-width: 1200px) {
+	#App > div:nth-child(1) { width: 90vw; height: 90vw; }
+	.x > h1, .o > h1, #temp_h1 { transform: scale(0.8) }
+}
